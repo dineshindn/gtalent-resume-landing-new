@@ -25,7 +25,7 @@ const OurMission = () => {
     <OurMissionStyle>
       <div id="ourMission" className="ourMission">
       <Row span={16}>
-        <Col span={12}>
+        <Col span={12} className="our-mission-img">
           <img src={img2} alt="" />
         </Col>
         <Col span={12}>

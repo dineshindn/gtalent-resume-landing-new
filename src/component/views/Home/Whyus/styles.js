@@ -42,24 +42,34 @@ export const WhyUsStyle = styled.div`
       border-image-slice: 1;
       border-image-width: 2px;
       background: #40454f;
+      border-radius: 8px; 
+      height: 229px;
     }
  
     .cardBody {
       display: flex;
+      align-items: center;
       h4{
+        font-family: Kanit;
+font-size: 20px;
+font-weight: 300;
+line-height: 27px;
         color: #FFFFFF;
-        opacity: .5;
-        font-weight: 400;
-        font-size: 17px;
+        opacity: .8;
+        margin: 0;
       }
     }
     .text-left{
-      text-align: left !important;
-      line-height: 1.5;
-      font-size: 15px;
+      font-family: Inter;
+font-size: 13px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0.09px;
+text-align: left;
       color: #D4D4D4;
     opacity: .8;
     }
+    
 
 
 

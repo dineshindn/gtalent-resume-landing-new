@@ -106,7 +106,7 @@ const ContactUs = () => {
               >
                 <Input.TextArea placeholder="Enter message" style={{ height: '120px' }} />
               </Form.Item>
-              <img className="heart" src={Heart} alt="" />
+
 
               <Row gutter={16}>
                 <Col span={24}>
@@ -120,9 +120,11 @@ const ContactUs = () => {
               </Col>
               </Row>
             </Form>
-        </div>
-          
-      </div>
+        </div>  
+        <div className="heart-container">
+             <img className="heart" src={Heart} alt="" />
+        </div> 
+       </div>
     </ContactUsStyle>
   );
 };

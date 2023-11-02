@@ -5,9 +5,36 @@ import styled from "styled-components";
 // import footerBg from "../../../assets/reusableComponents/footer/footer-bg.png";
 
 export const FooterStyle = styled.div`
+.footer-main{
+  position: relative;
+}
+.footerTop {  
+  width: 100%;
+  position: absolute;
+  top: -198px;
+  z-index: 1; /* Place the image behind the form */
+  overflow: hidden; /* Hide overflowing parts of the image */
+  h1{
+    font-size: 235.66px;
+    background: linear-gradient(to bottom, #D9D9D900, #3996E1);
+    margin-bottom: 0;
+    margin-top:0;
+    color: #fff;
+
+    span{
+      font-size: 63px;
+      color: #fff;
+      position: absolute;
+      right: 40px;
+
+    }
+  }
+}
   .footer {
-    padding: 30px 100px 65px;
-    
+    font-family: Kanit;
+    position: relative;
+    z-index: 2;
+    padding: 50px 100px 65px;
     background: #101623;
     h2 {
       font-size: 24px;
@@ -30,6 +57,9 @@ export const FooterStyle = styled.div`
       padding-left: 70px;
     }
     ul li {
+      display: flex;
+      align-items: center;
+      gap: 8px;  
       list-style-type: none;
       font-size: 15px;
       font-weight: 400;
@@ -55,11 +85,16 @@ export const FooterStyle = styled.div`
         width: 20px;
         height: 20px;
       }
-      div {
+      .footer-links{
         display: flex;
         gap: 30px;
         // margin: 85px auto 30px;
         margin-top: 15px;
+      }
+      .footer-terms{
+       display: flex;
+       justify-content: space-between;
+       margin-top: 8px;
       }
       p {
         font-size: 13px;
@@ -88,7 +123,7 @@ export const FooterStyle = styled.div`
     }
     h2{
       font-family: IBM Plex Sans;
-line-height: 31px;
+      line-height: 31px;
     }
     .footer-description{
       font-family: IBM Plex Sans;

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import * as palette from "../../../../styles/variables";
+import bg1 from '../../../../assets/home/ourMission/bg1.png';
+import bg2 from '../../../../assets/home/ourMission/bg2.png';
 
 export const OurMissionStyle = styled.div`
 .ourMission {
@@ -12,7 +14,10 @@ export const OurMissionStyle = styled.div`
   padding: 20px;
   background-size: cover; 
   margin-bottom: 30px;
+// .our-mission-img{
+//   background-image: url(${bg1}), url(${bg2.png});
 
+// }
 
   img{
     width: 90%;
@@ -28,17 +33,22 @@ export const OurMissionStyle = styled.div`
   }
 
   h2 {
-    font-size: 44px !important;
-    text-align: left;
+    font-family: Young Serif;
+font-size: 48px;
+font-weight: 400;
+line-height: 54px;
+text-align: left;
     color: #242a36;
     margin-top: 0px;
     margin-bottom: 0px;
     display: inline-block;
-    width: 43%;
   }
   p{
-    font-size: 20px;
-    line-height: 1.5;
+    font-family: Kanit;
+font-size: 20px;
+font-weight: 300;
+line-height: 27px;
+margin-top: 10px;
   }
  }
 }

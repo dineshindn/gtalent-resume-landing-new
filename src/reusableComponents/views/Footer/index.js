@@ -26,6 +26,14 @@ function Footer() {
   }, []);
   return (
     <FooterStyle>
+      <div className="footer-main">
+
+     
+       <div className="footerTop">
+        <h1>
+          G Talent Pro  <span>TM</span>
+        </h1>
+      </div>
       <div className="footer">
         <Row>
           <Col
@@ -34,7 +42,7 @@ function Footer() {
             data-aos="fade-down"
             data-aos-duration="1500"
           >
-            <div>
+            <div style={{marginTop: '28px'}}>
               <img src={footerLogo} alt=""/>
               <p className="footer-description">
               © 2023 G Talent Pro, INC.
@@ -74,7 +82,7 @@ function Footer() {
             <div data-aos="fade-down" data-aos-duration="2000">
             <h3>Follow Us</h3>
             <div className="footer-copyright">
-          <div>
+          <div className="footer-links">
             <a href="https://www.instagram.com/gtalentpro/?igshid=1wpe1wf5z95un" target="_blank" data-aos="fade-down" data-aos-duration="1000">
               <img src={instagram} alt="Instagram" />
             </a>
@@ -91,7 +99,7 @@ function Footer() {
               <img src={linkedin} alt="LinkedIn" />
             </a>
           </div>
-         <div> <p>Privacy Policy</p>
+         <div className="footer-terms"> <p>Privacy Policy</p>
           <p>Terms and Conditions</p></div>
         </div>
             </div>
@@ -99,6 +107,7 @@ function Footer() {
          
         </Row>
         
+      </div>
       </div>
     </FooterStyle>
   );

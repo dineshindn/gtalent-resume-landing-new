@@ -29,19 +29,41 @@ export const ReviewStyle = styled.div`
   }
 
   h2 {
-    font-size: 44px !important;
-    text-align: left;
+    font-family: Young Serif;
+font-size: 48px;
+font-weight: 400;
+line-height: 54px;
+text-align: left;
     color: #fff;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 0px;
     display: inline-block;
     width: 75%;
   }
   p{
-    font-size: 20px;
-    line-height: 1.5;
+    font-family: Kanit;
+font-size: 20px;
+font-weight: 400;
+line-height: 27px;
     color: #fff;
+    width: 65%;
+    margin-top: 9px;
+  }
+  button{
+    background: #000;
+    margin-top: 30px;
+  }
+  button:hover{
+    background: #000;
   }
  }
+}
+.review-mainpart{
+  position: relative;
+}
+.review-img{
+  position: absolute;
+  top: -100px;
+  right: 119px;
 }
 `;

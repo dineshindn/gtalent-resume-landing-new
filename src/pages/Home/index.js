@@ -32,7 +32,7 @@ const HomeMain = () => {
       {/* <Templates /> */}
       {/* <Contact /> */}
       <ContactUs />
-      <FooterTop />
+      {/* <FooterTop /> */}
       <Footer />
     </Fragment>
   );

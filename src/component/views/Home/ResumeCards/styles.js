@@ -18,14 +18,16 @@ export const ResumeCardStyle = styled.div`
     }
 
     h2 {
-      font-size: 44px !important;
+      font-family: Young Serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 54px;
       text-align: center;
       color: #242a36;
       margin-top: 0px;
       margin-bottom: 0px;
       display: inline-block;
-      width: 43%;
-
+      width: 52%;
       span {
         background-image: url(${dreams});
         background-size: 100% 100%;

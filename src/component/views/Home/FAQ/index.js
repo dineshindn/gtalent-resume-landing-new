@@ -56,6 +56,12 @@ const FAQ = () => {
     });
     AOS.refresh();
   }, []);
+ 
+  const CustomExpandIcon = ({ isActive }) => (
+    <span className={`custom-expand-icon ${isActive ? 'minus' : 'plus'}`}>
+      {isActive ? '-' : '+'}
+    </span>
+  );
 
   return (
     <FAQStyle>
@@ -74,9 +80,8 @@ const FAQ = () => {
              className="custom-collapse"
               bordered={false}
               defaultActiveKey={["1"]}
-              expandIcon={({ isActive }) => (
-                <CaretRightOutlined rotate={isActive ? 90 : 0} />
-              )}
+              expandIcon={CustomExpandIcon}
+              expandIconPosition= "end"
               style={{
                 background: token.colorBgContainer,
               }}

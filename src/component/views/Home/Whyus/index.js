@@ -83,7 +83,7 @@ const WhyUs = () => {
               <img src={item.img} alt="" />
               <h4>{item.title}</h4>
             </div>
-            <Typography.Paragraph className="text-left">{item.text}</Typography.Paragraph>
+            <Typography.Paragraph className="text-left cardbody-text">{item.text}</Typography.Paragraph>
           </Card>
         </Col>
       ))}

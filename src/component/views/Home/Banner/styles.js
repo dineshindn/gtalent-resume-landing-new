@@ -22,9 +22,9 @@ export const BannerStyle = styled.div`
     }
 
     h2 {
-      font-family: "YoungSerif", serif;
-      font-size: 88px !important;
-      //  line-height: 88px;
+      font-family: 'Young Serif', serif;
+      font-size: 72px !important;
+      line-height: 88px;
       //  top: 201px;
       text-align: center;
       color: #242a36;
