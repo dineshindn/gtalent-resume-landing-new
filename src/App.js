@@ -1,5 +1,6 @@
 import React from "react";
 import HomeMain from "./pages/Home";
+import RegisterMain from "./pages/Register";
 // import ServicesMain from "./pages/Services";
 // import SolutionsMain from "./pages/Solutions";
 // import WhoweareMain from "./pages/WhoWeAre";
@@ -10,6 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeMain />} />
+        <Route path="/register" element={<RegisterMain />} />
         {/* <Route path="/services" element={<ServicesMain />} />
         <Route path="/solutions" element={<SolutionsMain />} />
         <Route path="/who" element={<WhoweareMain />} /> */}

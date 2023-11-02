@@ -1,0 +1,30 @@
+.registration-form {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .registration-form .ant-form-item-label {
+    text-align: left;
+    width: 100px;
+  }
+  
+  .registration-form .ant-form-item-control {
+    width: 300px;
+  }
+  
+  .registration-form .ant-form-item-control input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .registration-form .ant-form-item-control input:focus {
+    border-color: #2196f3;
+  }
+  
+  .registration-form .ant-btn-primary {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: #fff;
+  }
+  
