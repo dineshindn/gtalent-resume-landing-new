@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { HowToMakeStyle } from "./styles";
 import { Card, Col, Row, Typography } from "antd";
 
-import one from "../../../../../src/assets/home/hotItWork/1.png";
-import bg2 from "../../../../../src/assets/home/hotItWork/bg2.png";
-import bg3 from "../../../../../src/assets/home/hotItWork/bg3.png";
-import bg4 from "../../../../../src/assets/home/hotItWork/bg4.png";
-import bg1 from "../../../../../src/assets/home/hotItWork/bg1.png";
-import icon1 from "../../../../../src/assets/home/hotItWork/icon1.png";
+import bg2 from "../../../../../src/assets/home/hotItWork/bg2.svg";
+import bg3 from "../../../../../src/assets/home/hotItWork/bg3.svg";
+import bg4 from "../../../../../src/assets/home/hotItWork/bg4.svg";
+import bg1 from "../../../../../src/assets/home/hotItWork/bg1.svg";
+
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -33,50 +32,54 @@ const HowtoMake = () => {
           <h1 data-aos="fade-down" data-aos-duration="1000">
             Quickly and easily build
           </h1>
-          <h2>How to make a resume</h2>
+          <h2 data-aos="fade-down" data-aos-duration="1400">How to make a resume</h2>
         </div>
 
         <Row
           gutter={16}
           className="howtowork-bg"
-          style={{ marginLeft: "0px", marginRight: "0px", marginTop: "30px" }}
+           
         >
-          <Col span={6} style={{ marginBottom: "20px", marginTop: '55px' }}>
-            <div className="">
-              <img src={bg1} alt="" />
+          <Col xs={24} sm={12} md={6} className="howtowork-card" data-aos="fade-right" data-aos-duration="1000">
+            <div className="howtomake-content">
+              <img className="bgimg" src={bg1} alt="" />
+          
               <h4>Choose a Template</h4>
-              <Typography.Paragraph className="text-left">
+              <Typography.Paragraph className="text-left htm-para">
                 Start by selecting a professionally designed template that suits
                 your industry and style
               </Typography.Paragraph>
             </div>
           </Col>
 
-          <Col span={6} style={{ marginBottom: "20px",marginTop: '55px' }}>
-            <div className="">
-              <img src={bg2} alt="" />
+          <Col xs={24} sm={12} md={6} className="howtowork-card" data-aos="fade-down" data-aos-duration="1000">
+            <div className="howtomake-content">
+            <img className="bgimg" src={bg2} alt="" />
+             
               <h4>Add Your Information</h4>
-              <Typography.Paragraph className="text-left">
+              <Typography.Paragraph className="text-left htm-para">
               Fill in your personal details, work experience, education, skills, and any additional sections relevant to your career
               </Typography.Paragraph>
             </div>
           </Col>
 
-          <Col span={6} style={{ marginBottom: "20px",marginTop: '55px' }}>
-            <div className="">
-              <img src={bg3} alt="" />
+          <Col xs={24} sm={12} md={6} className="howtowork-card"  data-aos="fade-up" data-aos-duration="1000">
+            <div className="howtomake-content">
+            <img className="bgimg" style={{marginTop: '7px'}} src={bg3} alt="" />
+           
               <h4>Review and Edit</h4>
-              <Typography.Paragraph className="text-left">
+              <Typography.Paragraph className="text-left htm-para">
               Proof read your resume and make any necessary edits using our user-friendly editor
               </Typography.Paragraph>
             </div>
           </Col>
 
-          <Col span={6} style={{ marginBottom: "20px",marginTop: '55px' }}>
-            <div className="">
-              <img src={bg4} alt="" />
+          <Col xs={24} sm={12} md={6} className="howtowork-card"  data-aos="fade-left" data-aos-duration="1000">
+            <div className="howtomake-content">
+            <img className="bgimg" src={bg4} alt="" />
+           
               <h4>Download and Share </h4>
-              <Typography.Paragraph className="text-left">
+              <Typography.Paragraph className="text-left htm-para">
               Once you're satisfied with your resume, download it in your preferred format and start applying for jobs!
               </Typography.Paragraph>
             </div>
@@ -84,6 +87,8 @@ const HowtoMake = () => {
           
         </Row>
       </div>
+      <div className="layer1"></div>
+      <div className="layer2"></div>
     </HowToMakeStyle>
   );
 };

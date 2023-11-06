@@ -3,6 +3,7 @@ import bg from "../../../../../src/assets/home/hotItWork/bg.png";
 
 export const ContactUsStyle = styled.div`
   .contactUs {
+    background-color: #F3F4F6;
     text-align: center;
     position: relative;
     margin-bottom: 30px;
@@ -11,8 +12,7 @@ export const ContactUsStyle = styled.div`
     border-radius: 40px;
     padding: 20px;
     background-size: cover;
-    // background-color: #fff;
-    margin-bottom: 30px;
+    // margin-bottom: 150px;
     h1 {
       text-align: center;
       margin: 0px 0 1px;
@@ -21,20 +21,21 @@ export const ContactUsStyle = styled.div`
       font-size: 32px;
       font-family: "Caveat";
     }
-
     h2 {
-      font-size: 44px !important;
+      font-family: Young Serif;
+font-size: 52px;
+font-weight: 400;
+line-height: 54px;
       text-align: center;
       color: #242a36;
-      margin-top: 0px;
+      margin-top: 10px;
       margin-bottom: 0px;
       display: inline-block;
-      width: 65%;
+      width: 90%;
     }
-
     .howtowork-bg{
       background-image: url(${bg});
-      background-size: 100% 100%;
+      background-size: 100% 85%;
       background-repeat: no-repeat;
       position: relative;
       text-align: left;
@@ -45,6 +46,8 @@ export const ContactUsStyle = styled.div`
     }
 
     .contactForm{
+      position: relative;
+      z-index: 2; /* Place the form on top of other elements */
       width: 50%;
     display: inline-block;
     background: #fff;
@@ -57,18 +60,35 @@ export const ContactUsStyle = styled.div`
     }
     .thumb{
       position: absolute;
-      left: 174px;
-      top: 267px;
+      left: -108px;
+      top: 47px;
     }
-
-    .heart{
+    }  
+    .heart-container {
       position: absolute;
-      right: 189px;
-       
-      bottom: 109px;
+      right: 167px;
+      bottom: 112px;
+      z-index: 1; /* Place the image behind the form */
+      overflow: hidden; /* Hide overflowing parts of the image */
     }
-    }
-     
-   
   }
+ 
+  
+  /* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 24px!important;
+    line-height: 1.3 !important;
+    width: 100% !important;
+  }
+  .contactUs .contactForm{
+    width: 92% !important;
+  }
+  
+}
+
 `;

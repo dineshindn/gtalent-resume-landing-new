@@ -21,17 +21,17 @@ const HomeMain = () => {
       <Navbar />
       <Banner />
       <BannerImages />
-      <CompanyLogos />
+      {/* <CompanyLogos /> */}
       <ResumeCards />
       {/* <AboutUs /> */}
       <HowItWorks />
       <WhyUs/>
       <OurMission />
       <Reviews />
-      <FAQ />
       {/* <Templates /> */}
       {/* <Contact /> */}
       <ContactUs />
+      <FAQ />
       <FooterTop />
       <Footer />
     </Fragment>

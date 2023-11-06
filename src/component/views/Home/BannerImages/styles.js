@@ -1,10 +1,18 @@
 import styled from "styled-components";
-import * as palette from "../../../../styles/variables";
-import dreams from "../../../../../src/assets/home/banner/dreams.png";
-import bannerBackground from "../../../../../src/assets/home/banner/banner-background.png";
 
 export const BannerStyle = styled.div`
   display: flex;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px){
+    .bannerImages img{
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+  }
+ 
 `;

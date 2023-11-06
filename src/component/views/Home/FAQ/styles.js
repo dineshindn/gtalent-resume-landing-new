@@ -14,7 +14,9 @@ export const FAQStyle = styled.div`
   margin-bottom: 30px;
   background: #fff;
 
-
+  .ant-collapse-item{
+    border-bottom: 1px solid #d9d9d9 !important;
+  }
   img{
     width: 90%;
   }
@@ -29,7 +31,10 @@ export const FAQStyle = styled.div`
   }
 
   h2 {
-    font-size: 44px !important;
+    font-family: Young Serif;
+font-size: 52px;
+font-weight: 400;
+line-height: 54px;
     text-align: left;
     color: #242a36;
     margin-top: 0px;
@@ -55,5 +60,45 @@ export const FAQStyle = styled.div`
   margin-left: auto; /* Push the icon to the right */
 }
 
+.custom-expand-icon {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center !important;
+  width: 24px; /* Adjust the width as needed */
+  cursor: pointer;
 }
+
+.plus {
+  color: green; /* Color for the plus sign */
+  margin-left: auto; /* Move the plus sign to the right */
+  font-size: 20px !important;
+  font-weight: 600;
+}
+
+.minus {
+  color: red; /* Color for the minus sign */
+  margin-left: auto; /* Move the minus sign to the right */
+  font-size: 20px !important;
+  font-weight: 600;
+  
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    width: 100% !important;
+  }
+
+  /* Additional mobile styles can be added here */
+}
+}
+
+}
+
+
+ 
 `;

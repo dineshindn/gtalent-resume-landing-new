@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { BannerStyle } from "./styles";
 import { Card, Col, Row } from "antd"; 
-import ButtonCompo from "../../../../reusableComponents/views/Button";
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button, Radio, Space, Divider } from 'antd';
+import ButtonCompo from "../../../../reusableComponents/views/Button";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const { Meta } = Card;
@@ -30,7 +30,9 @@ const Banner = () => {
           <h1 data-aos="fade-down" data-aos-duration="1000">
             Powered by AI
           </h1>
-          <h2>  The Resume to Land Your <span id="dream-design"> Dream </span>Job  </h2>
+          <h2   
+          data-aos="fade-down"
+          data-aos-duration="1300">  The Resume to Land Your <span id="dream-design"> Dream </span>Job  </h2>
         </div>
 
         <p
@@ -44,8 +46,6 @@ const Banner = () => {
 
 
         <div className="buttons">
-          {/* <ButtonCompo text="Sign Up" type="bg-blue-border" icon={false} onClick={() => { window.location.href = 'https://resume.com'; }} /> */}
-          {/* <ButtonCompo text="Sign Up" type="bg-blue-border" icon={false} onClick={() => { window.location.href = 'https://resume.com'; }} /> */}
         <Button className="left" type="primary"  shape="round" size="large">
             Create resume now
           </Button>

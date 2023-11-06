@@ -8,4 +8,6 @@ export const CompanyLogoStyle = styled.div`
   justify-content: center; /* Center horizontally */
   align-items: center;
   margin-top:20px;
+
+  
 `;

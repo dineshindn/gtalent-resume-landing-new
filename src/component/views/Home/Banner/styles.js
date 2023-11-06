@@ -22,9 +22,9 @@ export const BannerStyle = styled.div`
     }
 
     h2 {
-      font-family: "YoungSerif", serif;
-      font-size: 88px !important;
-      //  line-height: 88px;
+      font-family: "Young Serif", serif;
+      font-size: 72px !important;
+      line-height: 88px;
       //  top: 201px;
       text-align: center;
       color: #242a36;
@@ -41,25 +41,47 @@ export const BannerStyle = styled.div`
       }
     }
 
-    .banner-text{
-      font-family: 'Kanit', sans-serif;
+    .banner-text {
+      font-family: "Kanit", sans-serif;
       font-size: 20px;
       display: inline-block;
-      width: 42%;
-      color: #4C525E;
+      width: 45%;
+      color: #4c525e;
     }
-    .buttons{
-      .left{
+    .buttons {
+      .left {
         background: #101623;
-        font-family: 'Kanit', sans-serif;
+        font-family: "Kanit", sans-serif;
       }
-      .right{
+      .right {
         border: 1px solid #101623;
         color: #000;
         background: #fff;
         margin-left: 20px;
-        font-family: 'Kanit', sans-serif;
+        font-family: "Kanit", sans-serif;
       }
     }
   }
+
+
+  /* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+  .banner h1 {
+    font-size: 24px;
+  }
+
+  .banner h2 {
+    font-size: 35px !important;
+    line-height: 1.3;
+    width: 70%;
+  }
+
+  .banner .banner-text {
+    font-size: 16px;
+    width: 75%;
+  }
+
+ 
+}
+
 `;
