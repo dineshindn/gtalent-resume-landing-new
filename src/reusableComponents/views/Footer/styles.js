@@ -3,6 +3,7 @@ import styled from "styled-components";
 // import footerBg from "../../../assets/reusableComponents/footer/footer-bg.png";
 // import * as palette from "../../../styles/variables";
 // import footerBg from "../../../assets/reusableComponents/footer/footer-bg.png";
+import footerBg from "../../../assets/reusableComponents/footer/bg-text-img.svg";
 
 export const FooterStyle = styled.div`
 .footer-main{
@@ -12,10 +13,11 @@ export const FooterStyle = styled.div`
   width: 100%;
   position: absolute;
   top: -198px;
-  z-index: 1; /* Place the image behind the form */
-  overflow: hidden; /* Hide overflowing parts of the image */
+  z-index: 1;  
+  overflow: hidden;  
+  background-image: url(${footerBg});
   h1{
-    font-size: 235.66px;
+    font-size: 225.66px;
     background: linear-gradient(to bottom, #D9D9D900, #3996E1);
     margin-bottom: 0;
     margin-top:0;

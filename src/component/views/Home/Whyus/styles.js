@@ -38,7 +38,7 @@ export const WhyUsStyle = styled.div`
     }
     .element{
       border-right: 0px solid transparent;
-      border-image: linear-gradient(303deg, transparent 50%, #a19f9f 62%) 1;
+      // border-image: linear-gradient(303deg, transparent 50%, #a19f9f 62%) 1;
       border-image-slice: 1;
       border-image-width: 2px;
       background: #40454f;
@@ -51,9 +51,9 @@ export const WhyUsStyle = styled.div`
       align-items: center;
       h4{
         font-family: Kanit;
-font-size: 20px;
-font-weight: 300;
-line-height: 27px;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 27px;
         color: #FFFFFF;
         opacity: .8;
         margin: 0;
@@ -61,17 +61,39 @@ line-height: 27px;
     }
     .text-left{
       font-family: Inter;
-font-size: 13px;
-font-weight: 400;
-line-height: 24px;
-letter-spacing: 0.09px;
-text-align: left;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.09px;
+      text-align: left;
       color: #D4D4D4;
-    opacity: .8;
+      opacity: .8;
     }
     
 
-
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 20px !important;
+        padding-top: 10px;
+      }
+  
+      h2 {
+        font-size: 24px !important;
+      }
+  
+      .element {
+        margin: 5px;
+      }
+  
+      .cardBody h4 {
+        font-size: 14px;
+        line-height: 18px;
+      }
+  
+      .text-left {
+        font-size: 10px;
+      }
+    }
 
   
   }

@@ -66,4 +66,26 @@ line-height: 27px;
   top: -100px;
   right: 119px;
 }
+
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+  .heading h1 {
+    font-size: 24px; /* Adjust font size for mobile */
+    padding-top: 20px;
+  }
+
+  .heading h2 {
+    font-size: 32px; /* Adjust font size for mobile */
+    line-height: 38px; /* Adjust line height for mobile */
+  }
+
+  .heading p {
+    font-size: 18px; /* Adjust font size for mobile */
+    line-height: 24px; /* Adjust line height for mobile */
+  }
+
+  .heading button {
+    margin-top: 20px; /* Adjust margin for mobile */
+  }
+}
 `;

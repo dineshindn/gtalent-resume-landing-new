@@ -31,13 +31,15 @@ const ResumeCards = () => {
           <h1 data-aos="fade-down" data-aos-duration="1000">
           Fast. Easy. Effective.
           </h1>
-          <h2>Pick a resume template and build your resume in minutes!</h2>
+          <h2 
+          data-aos="fade-down"
+          data-aos-duration="1300">Pick a resume template and build your resume in minutes!</h2>
         </div>
 
         <p
           className="banner-text"
           data-aos="fade-down"
-          data-aos-duration="1500"
+          data-aos-duration="1600"
         >
           G Talent Pro provides a variety of professional templates and formats. Build a simple yet unique resume in no time
         </p>

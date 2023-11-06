@@ -13,7 +13,7 @@ export const HowToMakeStyle = styled.div`
     padding: 20px;
     background-size: cover;
     background-color: #fff;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     h1 {
       text-align: center;
       margin: 0px 0 1px;
@@ -33,7 +33,6 @@ export const HowToMakeStyle = styled.div`
       margin-top: 0px;
       margin-bottom: 0px;
       display: inline-block;
-      width: 55%;
     }
 
     .howtowork-bg {
@@ -45,6 +44,10 @@ export const HowToMakeStyle = styled.div`
       background-position: center;
       background-position-y: -53px;
       background-position-x: 0px;
+      .howtowork-card{
+        margin-bottom: 20px;
+        margin-top: 55px
+      }
     }
     .bgimg {
       position: relative;
@@ -93,7 +96,7 @@ export const HowToMakeStyle = styled.div`
       font-family: Kanit;
       font-size: 24px;
       font-weight: 400;
-      line-height: 54px;
+      // line-height: 54px;
       margin-bottom: 0;
     }
     .htm-para {
@@ -101,6 +104,49 @@ export const HowToMakeStyle = styled.div`
       font-size: 16px;
       font-weight: 300;
       line-height: 23px;
+    }
+  }
+
+  .layer1{
+    box-shadow: 0px 11px 14px 0px #00000008;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    width: 69%;
+    margin: 0 auto;
+    border-radius: 40px;
+    padding: 20px;
+    background-size: cover;
+    background-color: #fff;
+    margin-top: -23px;
+  }
+  .layer2{
+    box-shadow: 0px 11px 14px 0px #00000008;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 40px;
+    padding: 20px;
+    background-size: cover;
+    background-color: #fff;
+    margin-bottom: 30px;
+    margin-top: -23px;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 20px !important;
+      padding-top: 10px;
+    }
+
+    h2 {
+      font-size: 24px !important;
+    }
+    .howtowork-card{
+      margin-bottom: 20px;
+      margin-top: 10px !important;
     }
   }
 `;

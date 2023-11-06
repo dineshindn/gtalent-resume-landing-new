@@ -12,7 +12,7 @@ export const ContactUsStyle = styled.div`
     border-radius: 40px;
     padding: 20px;
     background-size: cover;
-    margin-bottom: 150px;
+    // margin-bottom: 150px;
     h1 {
       text-align: center;
       margin: 0px 0 1px;
@@ -35,7 +35,7 @@ line-height: 54px;
     }
     .howtowork-bg{
       background-image: url(${bg});
-      background-size: 100% 100%;
+      background-size: 100% 85%;
       background-repeat: no-repeat;
       position: relative;
       text-align: left;
@@ -73,4 +73,22 @@ line-height: 54px;
     }
   }
  
+  
+  /* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 24px!important;
+    line-height: 1.3 !important;
+    width: 100% !important;
+  }
+  .contactUs .contactForm{
+    width: 92% !important;
+  }
+  
+}
+
 `;

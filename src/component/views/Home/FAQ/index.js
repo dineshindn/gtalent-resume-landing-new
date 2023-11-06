@@ -67,19 +67,19 @@ const FAQ = () => {
     <FAQStyle>
       <div id="faq" className="faq">
         <Row span={16}>
-          <Col span={6}>
+          <Col xs={24} sm={24} md={6}>
             <div className="heading">
               <h1 data-aos="fade-down" data-aos-duration="1000">
                 Answers to
               </h1>
-              <h2>Resume Generator FAQs</h2>
+              <h2 data-aos="fade-right"  data-aos-duration="1500">Resume Generator FAQs</h2>
             </div>
           </Col>
-          <Col span={18}>
+          <Col  xs={24} sm={24} md={18}>
             <Collapse
              className="custom-collapse"
               bordered={false}
-              defaultActiveKey={["1"]}
+              // defaultActiveKey={["1"]}
               expandIcon={CustomExpandIcon}
               expandIconPosition= "end"
               style={{

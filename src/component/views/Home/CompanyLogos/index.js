@@ -25,12 +25,12 @@ const CompanyLogos = () => {
 
   return (
     <CompanyLogoStyle>
-      <div id="CompanyLogos" className="CompanyLogos">
-        <img src={logo1} alt="" />
-        <img src={logo2} alt="" />
-        <img src={logo3} alt="" />
-        <img src={logo4} alt="" />
-        <img src={logo5} alt="" />
+      <div id="CompanyLogos" className="CompanyLogos moving-images-container">
+        <img src={logo1} className="moving-image" alt="" />
+        <img src={logo2} className="moving-image" alt="" />
+        <img src={logo3} className="moving-image" alt="" />
+        <img src={logo4} className="moving-image" alt="" />
+        <img src={logo5} className="moving-image" alt="" />
       </div>
     </CompanyLogoStyle>
   );

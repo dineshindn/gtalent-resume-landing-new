@@ -27,7 +27,7 @@ export const ResumeCardStyle = styled.div`
       margin-top: 0px;
       margin-bottom: 0px;
       display: inline-block;
-      width: 52%;
+      width: 55%;
       span {
         background-image: url(${dreams});
         background-size: 100% 100%;
@@ -36,24 +36,41 @@ export const ResumeCardStyle = styled.div`
       }
     }
 
-    .banner-text{
-      font-family: 'Kanit', sans-serif;
+    .banner-text {
+      font-family: "Kanit", sans-serif;
       font-size: 20px;
       display: inline-block;
       width: 42%;
-      color: #4C525E;
+      color: #4c525e;
     }
-    .buttons{
-      .left{
+    .buttons {
+      .left {
         background: #101623;
-        font-family: 'Kanit', sans-serif;
+        font-family: "Kanit", sans-serif;
       }
-      .right{
+      .right {
         border: 1px solid #101623;
         color: #000;
         background: #fff;
         margin-left: 20px;
-        font-family: 'Kanit', sans-serif;
+        font-family: "Kanit", sans-serif;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      h2 {
+        font-size: 24px !important;
+        line-height: 1.2;
+        width: 75%;
+      }
+
+      .banner-text {
+        font-size: 16px;
+        width: 75%;
       }
     }
   }

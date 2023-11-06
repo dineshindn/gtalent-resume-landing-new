@@ -27,18 +27,11 @@ function Footer() {
   return (
     <FooterStyle>
       <div className="footer-main">
-
-     
-       <div className="footerTop">
-        <h1>
-          G Talent Pro  <span>TM</span>
-        </h1>
-      </div>
       <div className="footer">
         <Row>
           <Col
             className="gutter-row"
-            span={6}
+            span={24} md={6}
             data-aos="fade-down"
             data-aos-duration="1500"
           >
@@ -51,7 +44,7 @@ function Footer() {
           </Col>
           <Col
             className="gutter-row home-row"
-            span={6}
+            span={24} md={6}
             data-aos="fade-down"
             data-aos-duration="1500"
           >
@@ -66,7 +59,7 @@ function Footer() {
               </ul>
             </div>
           </Col>
-          <Col className="gutter-row contact-row" span={7}>
+          <Col className="gutter-row contact-row" span={24} md={6}>
             <div data-aos="fade-down" data-aos-duration="2000">
             <h3>Contact Us</h3>
               <ul>
@@ -78,7 +71,7 @@ function Footer() {
               </ul>
             </div>
           </Col>
-          <Col className="gutter-row contact-row" span={5}>
+          <Col className="gutter-row contact-row" span={24} md={6}>
             <div data-aos="fade-down" data-aos-duration="2000">
             <h3>Follow Us</h3>
             <div className="footer-copyright">

@@ -60,7 +60,6 @@ line-height: 54px;
   margin-left: auto; /* Push the icon to the right */
 }
 
-}
 .custom-expand-icon {
   display: flex !important;
   justify-content: flex-end;
@@ -72,10 +71,34 @@ line-height: 54px;
 .plus {
   color: green; /* Color for the plus sign */
   margin-left: auto; /* Move the plus sign to the right */
+  font-size: 20px !important;
+  font-weight: 600;
 }
 
 .minus {
   color: red; /* Color for the minus sign */
   margin-left: auto; /* Move the minus sign to the right */
+  font-size: 20px !important;
+  font-weight: 600;
+  
 }
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    width: 100% !important;
+  }
+
+  /* Additional mobile styles can be added here */
+}
+}
+
+}
+
+
+ 
 `;
