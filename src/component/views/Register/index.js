@@ -1,13 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { RegisterStyle } from "./styles";
-
 import { Form, Input, Select, Radio, DatePicker, Upload, Button, Card, Row, Col} from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import axios from "axios";
 const { Option } = Select;
 
+const BASE_URL = 'http://localhost:3001/api/v1';
+
 const RegisterForm = () => {
+  const [formData, setFormData] = useState({});
+  const [nationalityArray, setNationalityArray] = useState([]);
+  const [countryCode, setCountryCode] = useState()
+  const [stateArray, setStateArray] = useState([]);
+  const [cityArray ,setCityArray] = useState([]);
+  const [vendorArray_skill, setVendorArray_skill] = useState([]);
+  const [nationalityArray_edu, setNationalityArray_edu] = useState([]);
+
+  // Handle form data changes and update the state
+  const handleFormChange = (changedValues, allValues) => {
+    console.log(changedValues, "ccccccccc")
+    setFormData(allValues);
+    console.log(formData, "formdata")
+  };
   const onFinish = (values) => {
     // Handle form submission here
     console.log("Form values:", values);
@@ -18,6 +34,16 @@ const RegisterForm = () => {
       once: true,
     });
     AOS.refresh();
+    const fetchData = async () => {
+      try {
+       
+        await getapicall();
+      }
+      catch(e){
+
+      }
+    }
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -27,6 +53,143 @@ const RegisterForm = () => {
     AOS.refresh();
   }, []);
 
+  const getapicall = async() => {
+    try{
+      let countryArray = [];
+      let phonecodeTArray = [];
+      const response = await axios.get(`${BASE_URL}/master/countries`);
+      console.log(response.data, "country");
+      for (let i = 0; i < response.data.data.length; i++) {
+        let countryList = {
+          value: response.data.data[i].id,
+          label: response.data.data[i].name,
+        };
+        let phonecodeList = {
+          value: response.data.data[i].id,
+          label: "+" + response.data.data[i].phonecode,
+        };
+        countryArray.push(countryList);
+        phonecodeTArray.push(phonecodeList);
+      }
+      setNationalityArray(countryArray);
+      let employment_array = [];
+      let countryArray_edu = [];
+      const response_edu = await axios.get(
+        `${BASE_URL}/master/primary_qualification`
+      );
+      console.log(response_edu.data, "rres")
+      for (let i = 0; i < response_edu.data.data.length; i++) {
+        let countryList = {
+          value: response_edu.data.data[i].id,
+          label: response_edu.data.data[i].english,
+        };
+        countryArray_edu.push(countryList);
+      }
+      setNationalityArray_edu(countryArray_edu);
+    
+
+    }
+    catch(e){
+
+    }
+  }
+  const handleCountry = async(e) => {
+    setCountryCode(e)
+    console.log(e, "couyyyyyyyyyy")
+        let countryId = e;
+        let stateTArray = [];
+        const response = await axios.get(
+          `${BASE_URL}/master/states?id=${countryId}`
+        );
+        for (let i = 0; i < response.data.data.length; i++) {
+          let stateList = {
+            value: response.data.data[i].id,
+            label: response.data.data[i].name,
+          };
+          stateTArray.push(stateList);
+        }
+        setStateArray(stateTArray);
+  }
+  const handleState = async(e) => {
+    console.log(e);
+    let cityTArray = [];
+    const response = await axios.get(`${BASE_URL}/master/cities?id=${e}`);
+    for (let i = 0; i < response.data.data.length; i++) {
+      let cityList = {
+        value: response.data.data[i].id,
+        label: response.data.data[i].name,
+      };
+      cityTArray.push(cityList);
+    }
+    setCityArray(cityTArray);
+  }
+  const skills_getapi = async (e) => {
+    let vendorTArray_skill = [];
+    if (e !== "") {
+      const response_skill = await axios.get(`${BASE_URL}/master/skills/${e}`);
+      for (let i = 0; i < response_skill.data.data.length; i++) {
+        let vendorList = {
+          value: response_skill.data.data[i].english,
+          label: response_skill.data.data[i].english,
+        };
+        vendorTArray_skill.push(vendorList);
+      }
+      setVendorArray_skill(vendorTArray_skill);
+    }
+  };
+  const handleQualification = async(e) => {
+    // let exp_array = getData.data.data.educations;
+    let employment_array = [];
+    let countryArray_edu = [];
+    const response_edu = await axios.get(
+      `${BASE_URL}/master/primary_qualification`
+    );
+    for (let i = 0; i < response_edu.data.data.length; i++) {
+      let countryList = {
+        value: response_edu.data.data[i].id,
+        label: response_edu.data.data[i].english,
+      };
+      countryArray_edu.push(countryList);
+    }
+    setNationalityArray_edu(countryArray_edu);
+
+    // await Promise.all(
+    //   exp_array.map(async (obj, index) => {
+    //     let stateTArray = [];
+    //     const response = await axios.get(
+    //       `${BASE_URL}/master/secondary_qualification?id=${obj.primary_qualification_id}`
+    //     );
+    //     for (let i = 0; i < response.data.data.length; i++) {
+    //       let stateList = {
+    //         value: response.data.data[i].id,
+    //         label: response.data.data[i].english,
+    //       };
+    //       stateTArray.push(stateList);
+    //     }
+
+    //     let exp_obj = {
+    //       id: obj.id ? obj.id : 0,
+    //       primary_qualification: obj.primary_qualification_id,
+    //       degree: stateTArray,
+    //       secondary_qualification: obj.secondary_qualification_id,
+    //       secondary_qualification_name: obj.secondary_qualification,
+    //       specialization: obj.specialization,
+    //       college: obj.college,
+    //       percentage: obj.percentage,
+    //       cgpa: obj.cgpa,
+    //       year_of_complete: obj.year_of_complete
+    //         ? obj.year_of_complete
+    //         : undefined,
+    //     };
+
+    //     employment_array.push(exp_obj);
+    //   })
+    // );
+
+    // setEmployment_edu(employment_array);
+ 
+}
+ 
   return (
     <RegisterStyle>
       <div id="register-container" className="register-container">
@@ -43,6 +206,7 @@ const RegisterForm = () => {
           onFinish={onFinish}
           labelCol={{ span: 12 }}
           layout="vertical"
+          onValuesChange={handleFormChange}
         >
           <Row gutter={16}>
                 <Col span={12}>
@@ -129,13 +293,20 @@ const RegisterForm = () => {
             label="Nationality"
             rules={[{ required: true }]}
           >
-             <Select>
-            <Option value="" selected >Nationality</Option>
-            <Option value="India">India</Option>
-            <Option value="USA">USA</Option>
-            
-            </Select>
-          </Form.Item>
+             <Select
+                          id="country"
+                          value={
+                            countryCode
+                              ? nationalityArray.find(
+                                  (option) => option.value === countryCode)?.label
+                              : undefined
+                          }
+                          showSearch
+                          placeholder="Select Country"
+                          onChange= {handleCountry}
+                          options={nationalityArray}
+                        />
+           </Form.Item>
           </Col>
           <Col span={24}>
           <Form.Item
@@ -178,11 +349,17 @@ const RegisterForm = () => {
             label="Primary Skills"
             rules={[{ required: true }]}
           >
-            <Select mode="tags">
-              <Option value="skill1">Skill 1</Option>
-              <Option value="skill2">Skill 2</Option>
-              <Option value="skill3">Skill 3</Option>
-            </Select>
+              <Select
+                      mode="tags"
+                      style={{
+                        width: "100%",
+                      }}
+                      onSearch={(e) => skills_getapi(e)}
+                      notFoundContent={null}
+                      // onChange={handleSkillsChange_skill}
+                      placeholder="Search for Skills"
+                      options={vendorArray_skill}
+                    />
           </Form.Item>
           </Col>
           <Col span={12}>
@@ -191,10 +368,13 @@ const RegisterForm = () => {
             label="Qualification"
             rules={[{ required: true }]}
           >
-            <Select>
-              <Option value="bachelor">Bachelor's Degree</Option>
-              <Option value="master">Master's Degree</Option>
-            </Select>
+            <Select
+                                id="primary_qualification"
+                                showSearch
+                                placeholder="Select primary_qualification"
+                                // onChange={handleDegree}
+                                options={nationalityArray_edu}
+                              />
           </Form.Item>
           </Col>
           
@@ -204,11 +384,12 @@ const RegisterForm = () => {
             label="Degree Name"
             rules={[{ required: true }]}
           >
-            <Select>
-              <Option value="degree1">Degree 1</Option>
-              <Option value="degree2">Degree 2</Option>
-              <Option value="degree3">Degree 3</Option>
-            </Select>
+             <Select
+                                showSearch
+                                placeholder="Select Degree"
+                                // options={hobby.degree}
+                                autoComplete="off"
+                              />
           </Form.Item>
 
           </Col>
@@ -240,17 +421,51 @@ const RegisterForm = () => {
             label="Country"
             rules={[{ required: true }]}
           >
-            <Input />
+           <Select
+                          id="country"
+                          value={
+                            countryCode
+                              ? nationalityArray.find(
+                                  (option) => option.value === countryCode)?.label
+                              : undefined
+                          }
+                          showSearch
+                          placeholder="Select Country"
+                          onChange= {handleCountry}
+                          options={nationalityArray}
+                          autoComplete="off"
+                        />
           </Form.Item>
           </Col>
           <Col span={12}>
           <Form.Item name="state" label="State" rules={[{ required: true }]}>
-            <Input />
+          <Select
+                          id="state"
+                          showSearch
+                          placeholder="Select State"
+                          onChange={handleState}
+                          options={stateArray}
+                          autoComplete="off"
+                        />
           </Form.Item>
           </Col>
           <Col span={12}>
           <Form.Item name="city" label="City" rules={[{ required: true }]}>
-            <Input />
+          <Select
+                          id="city"
+                          showSearch
+                          // value={city ? cityArray[city-1] : undefined}
+                          // value={
+                          //   city
+                          //     ? cityArray.find(
+                          //         (option) => option.value === city
+                          //       )?.label
+                          //     : undefined
+                          // }
+                          placeholder="Select City"
+                          options={cityArray}
+                          autoComplete="off"
+                        />
           </Form.Item>
           </Col>
           <Col span={12}>
