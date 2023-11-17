@@ -118,6 +118,7 @@ export const FooterStyle = styled.div`
   .footer {
     margin-top: 0px;
     padding: 0px 17px 40px;
+   
     .ant-col-8 {
       width: 100% !important;
       max-width: 100% !important;
@@ -175,11 +176,11 @@ export const FooterStyle = styled.div`
     display: flex;
 gap: 30px;
 margin: 32px auto 21px;
-justify-content: center; 
+justify-content: flex-start !important; 
 align-items: center;
   }
   .footer-copyright p{
-  padding: 0 37px;
+  padding: 0;
   }
   }
 `;

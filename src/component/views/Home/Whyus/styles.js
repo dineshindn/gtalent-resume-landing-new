@@ -86,12 +86,12 @@ export const WhyUsStyle = styled.div`
       }
   
       .cardBody h4 {
-        font-size: 14px;
+        font-size: 17px;
         line-height: 18px;
       }
   
       .text-left {
-        font-size: 10px;
+        font-size: 12px;
       }
     }
 

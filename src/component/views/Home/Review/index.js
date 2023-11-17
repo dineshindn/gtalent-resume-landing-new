@@ -26,7 +26,7 @@ const Reviews = () => {
       <div id="review" className="review">
       <Row span={16}>
         
-        <Col xs={24} sm={24} md={16} style={{paddingLeft: '45px'}}>
+        <Col xs={24} sm={24} md={16}>
         <div className="heading">
           <h1 data-aos="fade-down" data-aos-duration="1000">
           Creation Made Easy

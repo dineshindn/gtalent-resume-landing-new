@@ -17,6 +17,7 @@ const RegisterForm = () => {
   const [cityArray ,setCityArray] = useState([]);
   const [vendorArray_skill, setVendorArray_skill] = useState([]);
   const [nationalityArray_edu, setNationalityArray_edu] = useState([]);
+  const [secQuali ,setSecQuali] = useState([]);
 
   // Handle form data changes and update the state
   const handleFormChange = (changedValues, allValues) => {
@@ -137,58 +138,25 @@ const RegisterForm = () => {
       setVendorArray_skill(vendorTArray_skill);
     }
   };
-  const handleQualification = async(e) => {
-    // let exp_array = getData.data.data.educations;
-    let employment_array = [];
-    let countryArray_edu = [];
-    const response_edu = await axios.get(
-      `${BASE_URL}/master/primary_qualification`
-    );
-    for (let i = 0; i < response_edu.data.data.length; i++) {
-      let countryList = {
-        value: response_edu.data.data[i].id,
-        label: response_edu.data.data[i].english,
-      };
-      countryArray_edu.push(countryList);
-    }
-    setNationalityArray_edu(countryArray_edu);
+  const handleDegree = async(e) => {
+      let s_qualification = [];
+        const response = await axios.get(
+          `${BASE_URL}/master/secondary_qualification?id=${e}`
+        );
+        for (let i = 0; i < response.data.data.length; i++) {
+          let stateList = {
+            value: response.data.data[i].id,
+            label: response.data.data[i].english,
+          };
+          s_qualification.push(stateList);
+        }
+        setSecQuali(s_qualification)
 
-    // await Promise.all(
-    //   exp_array.map(async (obj, index) => {
-    //     let stateTArray = [];
-    //     const response = await axios.get(
-    //       `${BASE_URL}/master/secondary_qualification?id=${obj.primary_qualification_id}`
-    //     );
-    //     for (let i = 0; i < response.data.data.length; i++) {
-    //       let stateList = {
-    //         value: response.data.data[i].id,
-    //         label: response.data.data[i].english,
-    //       };
-    //       stateTArray.push(stateList);
-    //     }
 
-    //     let exp_obj = {
-    //       id: obj.id ? obj.id : 0,
-    //       primary_qualification: obj.primary_qualification_id,
-    //       degree: stateTArray,
-    //       secondary_qualification: obj.secondary_qualification_id,
-    //       secondary_qualification_name: obj.secondary_qualification,
-    //       specialization: obj.specialization,
-    //       college: obj.college,
-    //       percentage: obj.percentage,
-    //       cgpa: obj.cgpa,
-    //       year_of_complete: obj.year_of_complete
-    //         ? obj.year_of_complete
-    //         : undefined,
-    //     };
 
-    //     employment_array.push(exp_obj);
-    //   })
-    // );
+      }
 
-    // setEmployment_edu(employment_array);
- 
-}
+    
  
   return (
     <RegisterStyle>
@@ -372,11 +340,12 @@ const RegisterForm = () => {
                                 id="primary_qualification"
                                 showSearch
                                 placeholder="Select primary_qualification"
-                                // onChange={handleDegree}
+                                onChange={handleDegree}
                                 options={nationalityArray_edu}
+                                autoComplete="off"
                               />
           </Form.Item>
-          </Col>
+          </Col>  
           
           <Col span={12}>
           <Form.Item
@@ -387,7 +356,7 @@ const RegisterForm = () => {
              <Select
                                 showSearch
                                 placeholder="Select Degree"
-                                // options={hobby.degree}
+                                options={secQuali}
                                 autoComplete="off"
                               />
           </Form.Item>
@@ -454,14 +423,6 @@ const RegisterForm = () => {
           <Select
                           id="city"
                           showSearch
-                          // value={city ? cityArray[city-1] : undefined}
-                          // value={
-                          //   city
-                          //     ? cityArray.find(
-                          //         (option) => option.value === city
-                          //       )?.label
-                          //     : undefined
-                          // }
                           placeholder="Select City"
                           options={cityArray}
                           autoComplete="off"
@@ -474,12 +435,18 @@ const RegisterForm = () => {
           </Form.Item>
           </Col>
           <Col span={12}>
-          <Form.Item name="pincode" label="How do you know about us">
+          <Form.Item name="about us" label="How do you know about us">
           <Select>
-              <Option value="degree1">Degree 1</Option>
-              <Option value="degree2">Degree 2</Option>
-              <Option value="degree3">Degree 3</Option>
-            </Select>
+              <Option value="Instagram">Instagram</Option>
+              <Option value="Facebook">Facebook</Option>
+              <Option value="Telegram">Telegram</Option>
+              <Option value="Whatsapp">Whatsapp</Option>
+              <Option value="Linked In">Linked In</Option>
+              <Option value="Friends">Friends</Option>
+              <Option value="Training Institute">Training Institute</Option>
+              <Option value="Campus">Campus</Option>
+              <Option value="Others">Others</Option>
+             </Select>
           </Form.Item>
           </Col>
           <Col span={12}>

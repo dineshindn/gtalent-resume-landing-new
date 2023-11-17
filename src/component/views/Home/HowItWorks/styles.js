@@ -92,9 +92,10 @@ export const HowToMakeStyle = styled.div`
       top: -8px;
       left: 46px;
     }
+  
     .howtomake-content h4 {
       font-family: Kanit;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 400;
       // line-height: 54px;
       margin-bottom: 0;
@@ -147,6 +148,15 @@ export const HowToMakeStyle = styled.div`
     .howtowork-card{
       margin-bottom: 20px;
       margin-top: 10px !important;
+    }
+    .htm-para {
+      padding: 5px 42px 0px;
+    }
+    .howtomake-content h4 {
+      font-size: 20px;
+    }
+    .howtomake-content{
+      text-align: center;
     }
   }
 `;

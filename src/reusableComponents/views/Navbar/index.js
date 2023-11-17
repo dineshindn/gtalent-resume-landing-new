@@ -4,7 +4,7 @@ import { Button } from "antd";
 import { NavbarStyle } from "./styles";
 import { Link } from "react-router-dom";
 import ButtonCompo from "../../../reusableComponents/views/Button";
-import logo from "../../../assets/reusableComponents/navbar/gtalentpro-logo.png"
+import logo from "../../../assets/reusableComponents/navbar/logo.svg"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false); // New state for mobile menu

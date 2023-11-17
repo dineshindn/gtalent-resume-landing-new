@@ -4,6 +4,7 @@ import gtalentText from "../../../assets/reusableComponents/footer/GTalentPro.sv
 export const FooterTopStyle = styled.div`
   .footerTop {
     width: 100%;
+    margin-bottom: -25px;
     background: linear-gradient(to bottom, #D9D9D900, #3996E1);
     // background-image: url(${gtalentText});
     h1{
@@ -25,14 +26,14 @@ export const FooterTopStyle = styled.div`
 
     .gtext{
       margin-top: 103px;
-      width: 90%;
+      width: 94%;
       text-align: center;
       display: inline;
       margin-left: 15px;
     }
 
     .gtm{
-      margin-bottom: 115px;
+      margin-bottom: 112px;
       position: relative;
     }
 
@@ -42,6 +43,8 @@ export const FooterTopStyle = styled.div`
 
   @media screen and (max-width: 768px) {
     .footerTop {
+        margin-bottom: -10px;
+        margin-top: -35px;
       h1 {
         font-size: 36px; /* Updated font size for mobile screens */
       }
@@ -58,6 +61,7 @@ export const FooterTopStyle = styled.div`
 
       .gtm {
         margin-bottom: 30px; /* Adjusted margin for mobile screens */
+        width: 20px;
       }
     }
 `;
