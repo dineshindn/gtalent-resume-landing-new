@@ -90,15 +90,15 @@ line-height: 27px;
   }
 
   .heading h2 {
-    font-size: 32px; /* Adjust font size for mobile */
-    line-height: 38px; /* Adjust line height for mobile */
+    font-size: 24px;
+    line-height: 31px;
     text-align: center;
     width: 100%;
   }
 
   .heading p {
-    font-size: 18px; /* Adjust font size for mobile */
-    line-height: 24px; /* Adjust line height for mobile */
+    font-size: 15px;
+    line-height: 22px; 
     text-align: center;
     width: 100%;
   }

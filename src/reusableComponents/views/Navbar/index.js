@@ -13,6 +13,7 @@ function Navbar() {
   const [isActive3, setIsActive3] = useState(false);
   const [isActive4, setIsActive4] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  
 
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
@@ -57,12 +58,12 @@ function Navbar() {
         <div className="nav-items">
           <ul className="nav-items-list">
           <li>
-              <a href="#templates" className="Link">
+              <a href="#resumeCard" className="Link">
                 Templates
               </a>
             </li>
             <li>
-              <a href="#work" className="Link">
+              <a href="#howToMake" className="Link">
                 How it Works
               </a>
             </li>
@@ -71,37 +72,24 @@ function Navbar() {
                 Why Us
               </a>      
             </li>
-            
-            
             <li>
-              <a href="#contact" className="Link">
+              <a href="#contactUs" className="Link">
                Contact
               </a>     
             </li>
             <li>
-              <a href="#contact" className="Link">
+              <a href="#faq" className="Link">
                FAQ
               </a>     
             </li>
-            {/* <li>
-              <a href="#" className="Link">
-                Login
-              </a>     
-            </li>
-            <li>
-              <a href="#" className="Link">
-                Register
-              </a>     
-            </li>
-             */}
+         
           </ul>
-          {/* <Button className="contact-button">Contact us</Button> */}
-          <ButtonCompo id="login-btn" text="Login" icon={false} onClick={() => openExternalLink('https://resume-stag.netlify.app/')} />
-          <ButtonCompo text="Sign Up" type="bg-blue-border" icon={false} onClick={() => { window.location.href = 'https://resume.com'; }} />
+          <a href="/signin" alt="link"><ButtonCompo id="login-btn" text="Login" icon={false} /></a>
+          <a href="/signup" alt="link"><ButtonCompo text="Sign Up" type="bg-blue-border" icon={false}  /></a>
           
         </div>
 
-        {/* <div id="mobile">
+        <div id="mobile">
           <div
             id="menu-icon"
             className={menuOpen ? "close-icon" : "bars-icon"}
@@ -109,95 +97,34 @@ function Navbar() {
           >
             {menuOpen ? <CloseOutlined /> : <MenuOutlined />}
           </div>
-        </div> */}
+        </div>
       </div>
 
       {menuOpen && (
         <>
-          <div id="mobile-menu" className="nav-mobile-menu">
-            <ul>
-              <div className={`faq ${isActive1 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick1}>
-                  <li>
-                    <Link onClick={toggleMenu} to="/" className="Link">
-                      Home
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive1 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-              <div className={`faq ${isActive2 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick2}>
-                  <li>
-                    <Link to="/services" className="Link">
-                      What we do
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive2 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-              <div className={`faq ${isActive3 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick3}>
-                  <li>
-                    <Link to="/solutions" className="Link">
-                      Who we are
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive3 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-              <div className={`faq ${isActive4 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick4}>
-                  <li>
-                    <Link to="/who" className="Link">
-                      Why us
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive4 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-            </ul>
-            <div className="nav-media">
-                <ButtonCompo text="Book a Demo" type="bg-blue-border" />
-            
-            </div>
-          </div>
+           <div id="mobile-menu" className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
+        <ul>
+          <li>
+            <Link to="/" className="Link" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" className="Link" onClick={toggleMenu}>
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="Link" onClick={toggleMenu}>
+              About Us
+            </Link>
+          </li>
+          {/* Add more mobile menu items as needed */}
+        </ul>
+        <div className="nav-media">
+          <ButtonCompo text="Book a Demo" type="bg-blue-border" onClick={toggleMenu} />
+        </div>
+      </div>
         </>
       )}
     </NavbarStyle>

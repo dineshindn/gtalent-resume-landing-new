@@ -6,11 +6,11 @@ import bannerBackground from "../../../../../src/assets/home/banner/banner-backg
 export const BannerStyle = styled.div`
   .banner {
     text-align: center;
-    background-image: url(${bannerBackground});
-    background-size: auto 433px;
-    background-repeat: no-repeat;
-    position: relative;
-    background-position: top right;
+ 
+    // background-size: auto 433px;
+    // background-repeat: no-repeat;
+    // position: relative;
+    // background-position: top right;
     margin-bottom: 30px;
     h1 {
       text-align: center;
@@ -62,26 +62,39 @@ export const BannerStyle = styled.div`
       }
     }
   }
+  .bannerBg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 27%;
+  }
 
 
   /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
+  .bannerBg {
+    width: 50%;
+}
   .banner h1 {
     font-size: 24px;
   }
 
   .banner h2 {
-    font-size: 35px !important;
+    font-size: 23px!important;
     line-height: 1.3;
-    width: 70%;
+    width: 100%;
   }
 
   .banner .banner-text {
-    font-size: 16px;
-    width: 75%;
+    font-size: 11px;
+    width: 86%;
   }
-
- 
+  .banner{
+    .ant-btn.ant-btn-lg {
+      font-size: 13px;
+      height: 36px;
+    }
+  }
 }
 
 `;

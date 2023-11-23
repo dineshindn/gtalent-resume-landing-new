@@ -137,9 +137,10 @@ export const HowToMakeStyle = styled.div`
   }
 
   @media screen and (max-width: 768px) {
+    .howToMake {
     h1 {
       font-size: 20px !important;
-      padding-top: 10px;
+      padding-top: 0px;
     }
 
     h2 {
@@ -158,5 +159,23 @@ export const HowToMakeStyle = styled.div`
     .howtomake-content{
       text-align: center;
     }
+    .mob-dots{
+      // border-bottom: 2px dashed #DBF0E2;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .mob-dots::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      width: 90%;
+      height: 3px; /* Adjust the height to change the thickness of the line */
+      background-image: repeating-linear-gradient(90deg, #DBF0E2, #DBF0E2 7px, transparent 10px, transparent 3px);
+    }
+    .howtowork-bg {
+      background-image: none;
+    }
+  }
   }
 `;

@@ -83,6 +83,7 @@ line-height: 54px;
   
 }
 @media screen and (max-width: 768px) {
+  margin-top: 40px !important;
   h1 {
     font-size: 20px;
   }

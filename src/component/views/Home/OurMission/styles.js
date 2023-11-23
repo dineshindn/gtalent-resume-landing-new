@@ -21,6 +21,9 @@ export const OurMissionStyle = styled.div`
     img {
       width: 90%;
     }
+    .ant-btn-primary{
+      background-color: #101623;
+    }
     .heading {
       h1 {
         text-align: left;

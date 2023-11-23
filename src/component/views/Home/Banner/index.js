@@ -4,6 +4,7 @@ import { Card, Col, Row } from "antd";
 import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button, Radio, Space, Divider } from 'antd';
 import ButtonCompo from "../../../../reusableComponents/views/Button";
+import bannerBackground from "../../../../../src/assets/home/banner/banner-background.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 const { Meta } = Card;
@@ -56,6 +57,7 @@ const Banner = () => {
         </div>
 
       </div>
+      <img className="bannerBg" src={bannerBackground} alt="bg"/>
     </BannerStyle>
   );
 };

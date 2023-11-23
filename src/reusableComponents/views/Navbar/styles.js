@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const NavbarStyle = styled.div`
   .navbar {
+    padding-top: 25px !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,6 +19,10 @@ export const NavbarStyle = styled.div`
     .banner-btn:hover .btn_text{
       color: blue;
 
+    }
+    a {
+      text-decoration: none;
+      color: inherit; 
     }
     .logo {
       flex: 1;
@@ -138,7 +143,9 @@ export const NavbarStyle = styled.div`
   }
 
   @media screen and (max-width: 760px) {
-    
+    .logo img {
+      width: 110px;
+    }
     .navbar {
       padding: 13px 25px 13px 16px;
     }

@@ -87,20 +87,22 @@ line-height: 54px;
   
   /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
-  h1 {
-    font-size: 20px;
-  }
-
   h2 {
-    font-size: 24px!important;
+    font-size: 20px !important;
     line-height: 1.3 !important;
     width: 100% !important;
   }
-  .contactUs .contactForm{
+  .contactUs {
+    padding: 20px 20px 0px;
+     .contactForm{
     width: 92% !important;
     margin-left: -16px;
   }
-  
+  h1 {
+    padding-top: 0px;
+    font-size: 24px;
+   }
+} 
 }
 
 `;

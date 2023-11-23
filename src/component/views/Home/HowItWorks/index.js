@@ -50,6 +50,7 @@ const HowtoMake = () => {
                 your industry and style
               </Typography.Paragraph>
             </div>
+            <div className="mob-dots"></div>
           </Col>
 
           <Col xs={24} sm={12} md={6} className="howtowork-card" data-aos="fade-down" data-aos-duration="1000">
@@ -61,6 +62,7 @@ const HowtoMake = () => {
               Fill in your personal details, work experience, education, skills, and any additional sections relevant to your career
               </Typography.Paragraph>
             </div>
+            <div className="mob-dots"></div>
           </Col>
 
           <Col xs={24} sm={12} md={6} className="howtowork-card"  data-aos="fade-up" data-aos-duration="1000">
@@ -72,6 +74,7 @@ const HowtoMake = () => {
               Proof read your resume and make any necessary edits using our user-friendly editor
               </Typography.Paragraph>
             </div>
+            <div className="mob-dots"></div>
           </Col>
 
           <Col xs={24} sm={12} md={6} className="howtowork-card"  data-aos="fade-left" data-aos-duration="1000">
