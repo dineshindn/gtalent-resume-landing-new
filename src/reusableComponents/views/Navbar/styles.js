@@ -143,6 +143,12 @@ export const NavbarStyle = styled.div`
   }
 
   @media screen and (max-width: 760px) {
+    #login-btn{
+      background-color: #F2F2F2;
+    }
+    #mobile-menu .login-links a{
+
+    }
     .logo img {
       width: 110px;
     }
@@ -192,7 +198,7 @@ export const NavbarStyle = styled.div`
     display: block;
     background-color: #ffffff;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-    padding: 30px 0 0 10px;
+    padding: 30px 0 0 20px;
     position: fixed;
     top: 70px;
     left: 0px;
@@ -208,7 +214,7 @@ export const NavbarStyle = styled.div`
   }
 
   #mobile-menu li {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
   .faq-answer {
     display: none;

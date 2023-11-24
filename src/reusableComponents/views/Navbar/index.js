@@ -20,6 +20,7 @@ function Navbar() {
   };
 
   const toggleMenu = () => {
+    console.log("12345")
     setMenuOpen(!menuOpen);
   };
   function handleClick1() {
@@ -103,27 +104,42 @@ function Navbar() {
       {menuOpen && (
         <>
            <div id="mobile-menu" className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
-        <ul>
-          <li>
-            <Link to="/" className="Link" onClick={toggleMenu}>
-              Home
-            </Link>
+           <ul>
+          <li onClick={toggleMenu}>
+              <a href="#resumeCard" className="Link">
+                Templates
+              </a>
           </li>
-          <li>
-            <Link to="/services" className="Link" onClick={toggleMenu}>
-              Services
-            </Link>
+          <li onClick={toggleMenu}>
+              <a href="#howToMake" className="Link">
+                How it Works
+              </a>
           </li>
-          <li>
-            <Link to="/about" className="Link" onClick={toggleMenu}>
-              About Us
-            </Link>
+          <li onClick={toggleMenu}>
+              <a href="#whyus" className="Link">
+                Why Us
+              </a> 
+          </li>
+          <li onClick={toggleMenu}>
+              <a href="#contactUs" className="Link">
+               Contact
+              </a>
+          </li>
+          <li onClick={toggleMenu}>
+              <a href="#faq" className="Link">
+               FAQ
+              </a> 
           </li>
           {/* Add more mobile menu items as needed */}
         </ul>
-        <div className="nav-media">
+        <div className="login-links">
+        <a href="/signin" alt="link"><ButtonCompo id="login-btn" text="Login" icon={false} /></a>
+        <a href="/signup" alt="link"><ButtonCompo text="Sign Up" type="bg-blue-border" icon={false}  /></a>
+        </div> 
+
+        {/* <div className="nav-media">
           <ButtonCompo text="Book a Demo" type="bg-blue-border" onClick={toggleMenu} />
-        </div>
+        </div> */}
       </div>
         </>
       )}

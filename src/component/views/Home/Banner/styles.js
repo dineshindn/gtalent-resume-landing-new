@@ -73,7 +73,7 @@ export const BannerStyle = styled.div`
   /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
   .bannerBg {
-    width: 50%;
+   display: none !important;
 }
   .banner h1 {
     font-size: 24px;
