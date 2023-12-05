@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { ResumeCardStyle } from "./styles";
 import { Card, Col, Row } from "antd";
+import { useNavigate  } from 'react-router-dom';
 import { Carousel } from 'antd';
 import ButtonCompo from "../../../../reusableComponents/views/Button";
 import { ArrowRightOutlined } from '@ant-design/icons';
@@ -11,13 +12,7 @@ import template1 from '../../../../assets/home/resumeCards/Template 01.svg';
 import template2 from '../../../../assets/home/resumeCards/Template 02.svg'
 const { Meta } = Card;
 const ResumeCards = () => {
-  
-  useEffect(() => {
-    AOS.init({
-      once: true,
-    });
-    AOS.refresh();
-  }, []);
+  const navigate = useNavigate ();
 
   useEffect(() => {
     AOS.init({
@@ -26,12 +21,24 @@ const ResumeCards = () => {
     AOS.refresh();
   }, []);
 
-  // const contentStyle = {
-  //   height: '160px',
-  //   textAlign: 'center',
-  //   background: '#364d79',
-  // };
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+    AOS.refresh();
+  }, []);
 
+  const handleButtonClick = () => {
+    // Navigate to another page, e.g., '/another-page'
+    navigate('/signin');
+  };
+  const scrollToSection = () => {
+    const element = document.getElementById('howToMake');
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const contentStyle = {
     height: 'auto',
     color: '#fff',
@@ -126,10 +133,10 @@ const ResumeCards = () => {
         <div className="buttons">
           {/* <ButtonCompo text="Sign Up" type="bg-blue-border" icon={false} onClick={() => { window.location.href = 'https://resume.com'; }} /> */}
           {/* <ButtonCompo text="Sign Up" type="bg-blue-border" icon={false} onClick={() => { window.location.href = 'https://resume.com'; }} /> */}
-        <Button className="left" type="primary"  shape="round" size="large">
+        <Button className="left" type="primary"  shape="round" size="large" onClick={handleButtonClick}>
             Create resume now
           </Button>
-          <Button className="right" type="primary" shape="round" size="large">
+          <Button className="right" type="primary" shape="round" size="large"  onClick={scrollToSection}>
             How it works <ArrowRightOutlined />
           </Button>
 

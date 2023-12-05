@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { UpOutlined, DownOutlined, MenuOutlined, CloseOutlined, LoginOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { NavbarStyle } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ButtonCompo from "../../../reusableComponents/views/Button";
 import logo from "../../../assets/reusableComponents/navbar/logo.svg"
 
@@ -14,13 +14,15 @@ function Navbar() {
   const [isActive4, setIsActive4] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   
+  const location = useLocation();
+  const isSignupPage = location.pathname === '/signup';
+
 
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
 
   const toggleMenu = () => {
-    console.log("12345")
     setMenuOpen(!menuOpen);
   };
   function handleClick1() {
@@ -59,34 +61,43 @@ function Navbar() {
         <div className="nav-items">
           <ul className="nav-items-list">
           <li>
-              <a href="#resumeCard" className="Link">
+              <a href={isSignupPage ? '/#resumeCard' : '#resumeCard'} className="Link">
                 Templates
               </a>
             </li>
             <li>
-              <a href="#howToMake" className="Link">
+              <a href={isSignupPage ? '/#howToMake' : '#howToMake'} className="Link">
                 How it Works
               </a>
             </li>
             <li>
-              <a href="#whyus" className="Link">
+              <a href={isSignupPage ? '/#whyus' : '#whyus'} className="Link">
                 Why Us
               </a>      
             </li>
             <li>
-              <a href="#contactUs" className="Link">
+              <a href={isSignupPage ? '/#contactUs' : '#contactUs'} className="Link">
                Contact
               </a>     
             </li>
             <li>
-              <a href="#faq" className="Link">
+              <a href={isSignupPage ? '/#faq' : '#faq'} className="Link">
                FAQ
               </a>     
             </li>
+            <li>
+              <a href="/signin" className="Link">
+               Login
+              </a>     
+            </li>
+
+            <li>
+          <a href="/signup" alt="link"><ButtonCompo text="Sign Up" type="bg-blue-border" icon={false}  /></a>
+
+            </li>
+           
          
           </ul>
-          <a href="/signin" alt="link"><ButtonCompo id="login-btn" text="Login" icon={false} /></a>
-          <a href="/signup" alt="link"><ButtonCompo text="Sign Up" type="bg-blue-border" icon={false}  /></a>
           
         </div>
 
@@ -106,40 +117,40 @@ function Navbar() {
            <div id="mobile-menu" className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
            <ul>
           <li onClick={toggleMenu}>
-              <a href="#resumeCard" className="Link">
+              <a href={isSignupPage ? '/#resumeCard' : '#resumeCard'} className="Link">
                 Templates
               </a>
           </li>
           <li onClick={toggleMenu}>
-              <a href="#howToMake" className="Link">
+              <a href={isSignupPage ? '/#howToMake' : '#howToMake'} className="Link">
                 How it Works
               </a>
           </li>
           <li onClick={toggleMenu}>
-              <a href="#whyus" className="Link">
+              <a href={isSignupPage ? '/#whyus' : '#whyus'} className="Link">
                 Why Us
               </a> 
           </li>
           <li onClick={toggleMenu}>
-              <a href="#contactUs" className="Link">
+              <a href={isSignupPage ? '/#contactUs' : '#contactUs'} className="Link">
                Contact
               </a>
           </li>
           <li onClick={toggleMenu}>
-              <a href="#faq" className="Link">
+              <a href={isSignupPage ? '/#faq' : '#faq'} className="Link">
                FAQ
+              </a> 
+          </li>
+          <li onClick={toggleMenu}>
+              <a href="/signin" className="Link">
+               Login
               </a> 
           </li>
           {/* Add more mobile menu items as needed */}
         </ul>
         <div className="login-links">
-        <a href="/signin" alt="link"><ButtonCompo id="login-btn" text="Login" icon={false} /></a>
         <a href="/signup" alt="link"><ButtonCompo text="Sign Up" type="bg-blue-border" icon={false}  /></a>
         </div> 
-
-        {/* <div className="nav-media">
-          <ButtonCompo text="Book a Demo" type="bg-blue-border" onClick={toggleMenu} />
-        </div> */}
       </div>
         </>
       )}

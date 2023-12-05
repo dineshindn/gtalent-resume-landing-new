@@ -6,11 +6,11 @@ import bannerBackground from "../../../../../src/assets/home/banner/banner-backg
 export const BannerStyle = styled.div`
   .banner {
     text-align: center;
- 
-    // background-size: auto 433px;
-    // background-repeat: no-repeat;
-    // position: relative;
-    // background-position: top right;
+    // background-image: url(${bannerBackground});
+    background-size: auto 433px;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: top right;
     margin-bottom: 30px;
     h1 {
       text-align: center;

@@ -40,6 +40,7 @@ export const NavbarStyle = styled.div`
     .nav-items {
       display: flex;
       align-items: center;
+      z-index: 2; 
 
       ul {
         display: flex;

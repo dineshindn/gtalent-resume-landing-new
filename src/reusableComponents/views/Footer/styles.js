@@ -58,6 +58,7 @@ export const FooterStyle = styled.div`
     .home-row{
       padding-left: 70px;
     }
+    .aLink a{ color: #fff;}
     ul li {
       display: flex;
       align-items: center;
