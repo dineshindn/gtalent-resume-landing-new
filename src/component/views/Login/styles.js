@@ -2,7 +2,7 @@ import styled from "styled-components";
 import bdImg from "../../../../src/assets/login/login-bg.svg";
 
 export const LoginStyle = styled.div`
-  .register-container {
+  .signin-container {
     background-image: url(${bdImg});
     position: absolute;
     top: 0;
@@ -52,7 +52,6 @@ export const LoginStyle = styled.div`
       line-height: 38px;
       letter-spacing: 0em;
       text-align: left !important;
-      width: 70% !important;
       margin-top: 0px;
     }
 
