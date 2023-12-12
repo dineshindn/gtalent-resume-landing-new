@@ -1,8 +1,13 @@
 import styled from "styled-components";
 import bg from "../../../../../src/assets/home/hotItWork/bg.png";
+import bg2 from "../../../../assets/home/contactUs/color.png"
 
 export const ContactUsStyle = styled.div`
   .contactUs {
+    background-image: url(${bg2});
+    background-size: cover; 
+    // background-position: center;
+    background-repeat: no-repeat;
     background-color: #F3F4F6;
     text-align: center;
     position: relative;
@@ -10,7 +15,7 @@ export const ContactUsStyle = styled.div`
     width: 80%;
     margin: 0 auto;
     border-radius: 40px;
-    padding: 20px;
+    padding: 20px 20px 80px;
     background-size: cover;
     // margin-bottom: 150px;
     h1 {
@@ -71,24 +76,33 @@ line-height: 54px;
       z-index: 1; /* Place the image behind the form */
       overflow: hidden; /* Hide overflowing parts of the image */
     }
+    .ant-btn-primary {
+      background-color: #101623;;
+    }
+    .ant-btn-primary:hover {
+      background-color: #101623;;
+    }
   }
  
   
   /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
-  h1 {
-    font-size: 20px;
-  }
-
   h2 {
-    font-size: 24px!important;
+    font-size: 20px !important;
     line-height: 1.3 !important;
     width: 100% !important;
   }
-  .contactUs .contactForm{
+  .contactUs {
+    padding: 20px 20px 0px;
+     .contactForm{
     width: 92% !important;
+    margin-left: -16px;
   }
-  
+  h1 {
+    padding-top: 0px;
+    font-size: 24px;
+   }
+} 
 }
 
 `;

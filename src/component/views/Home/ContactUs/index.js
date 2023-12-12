@@ -71,7 +71,7 @@ const ContactUs = () => {
                 </Form.Item>
               </Col>
             </Row>
-            <img className="thumb" src={Thumb} alt="" />
+            {/* <img className="thumb" src={Thumb} alt="" /> */}
             <Form.Item
               name="email"
               rules={[
@@ -139,9 +139,9 @@ const ContactUs = () => {
             </Row>
           </Form>
         </div>
-        <div className="heart-container">
+        {/* <div className="heart-container">
           <img className="heart" src={Heart} alt="" />
-        </div>
+        </div> */}
       </div>
     </ContactUsStyle>
   );

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { UpOutlined, DownOutlined, MenuOutlined, CloseOutlined, LoginOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 import { NavbarStyle } from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ButtonCompo from "../../../reusableComponents/views/Button";
-import logo from "../../../assets/reusableComponents/navbar/gtalentpro-logo.png"
+import logo from "../../../assets/reusableComponents/navbar/logo.svg"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false); // New state for mobile menu
@@ -13,6 +13,10 @@ function Navbar() {
   const [isActive3, setIsActive3] = useState(false);
   const [isActive4, setIsActive4] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  
+  const location = useLocation();
+  const isSignupPage = location.pathname === '/signup';
+
 
   const toggleDropdown = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
@@ -57,51 +61,47 @@ function Navbar() {
         <div className="nav-items">
           <ul className="nav-items-list">
           <li>
-              <a href="#templates" className="Link">
+              <a href={isSignupPage ? '/#resumeCard' : '#resumeCard'} className="Link">
                 Templates
               </a>
             </li>
             <li>
-              <a href="#work" className="Link">
+              <a href={isSignupPage ? '/#howToMake' : '#howToMake'} className="Link">
                 How it Works
               </a>
             </li>
             <li>
-              <a href="#whyus" className="Link">
+              <a href={isSignupPage ? '/#whyus' : '#whyus'} className="Link">
                 Why Us
               </a>      
             </li>
-            
-            
             <li>
-              <a href="#contact" className="Link">
+              <a href={isSignupPage ? '/#contactUs' : '#contactUs'} className="Link">
                Contact
               </a>     
             </li>
             <li>
-              <a href="#contact" className="Link">
+              <a href={isSignupPage ? '/#faq' : '#faq'} className="Link">
                FAQ
               </a>     
             </li>
-            {/* <li>
-              <a href="#" className="Link">
-                Login
-              </a>     
-            </li>
             <li>
-              <a href="#" className="Link">
-                Register
+              <a href="/signin" className="Link">
+               Login
               </a>     
             </li>
-             */}
+
+            <li>
+          <a href="/signup" alt="link"><ButtonCompo text="Sign Up" type="bg-blue-border" icon={false}  /></a>
+
+            </li>
+           
+         
           </ul>
-          {/* <Button className="contact-button">Contact us</Button> */}
-          <ButtonCompo id="login-btn" text="Login" icon={false} onClick={() => openExternalLink('https://resume-stag.netlify.app/')} />
-          <ButtonCompo text="Sign Up" type="bg-blue-border" icon={false} onClick={() => { window.location.href = 'https://resume.com'; }} />
           
         </div>
 
-        {/* <div id="mobile">
+        <div id="mobile">
           <div
             id="menu-icon"
             className={menuOpen ? "close-icon" : "bars-icon"}
@@ -109,95 +109,49 @@ function Navbar() {
           >
             {menuOpen ? <CloseOutlined /> : <MenuOutlined />}
           </div>
-        </div> */}
+        </div>
       </div>
 
       {menuOpen && (
         <>
-          <div id="mobile-menu" className="nav-mobile-menu">
-            <ul>
-              <div className={`faq ${isActive1 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick1}>
-                  <li>
-                    <Link onClick={toggleMenu} to="/" className="Link">
-                      Home
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive1 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-              <div className={`faq ${isActive2 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick2}>
-                  <li>
-                    <Link to="/services" className="Link">
-                      What we do
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive2 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-              <div className={`faq ${isActive3 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick3}>
-                  <li>
-                    <Link to="/solutions" className="Link">
-                      Who we are
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive3 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-              <div className={`faq ${isActive4 ? "active" : ""}`}>
-                <button className="nav-accordion" onClick={handleClick4}>
-                  <li>
-                    <Link to="/who" className="Link">
-                      Why us
-                    </Link>
-                  </li>
-                  <span className="nav-accordion-toggle">
-                    {isActive4 ? <UpOutlined/> : <DownOutlined/>}
-                  </span>
-                </button>
-                <div className="faq-answer">
-                  <ul>
-                    <li>Services</li>
-                    <li>Infrastructure</li>
-                    <li>Case Studies</li>
-                  </ul>
-                </div>
-              </div>
-            </ul>
-            <div className="nav-media">
-                <ButtonCompo text="Book a Demo" type="bg-blue-border" />
-            
-            </div>
-          </div>
+           <div id="mobile-menu" className={`nav-mobile-menu ${menuOpen ? "open" : ""}`}>
+           <ul>
+          <li onClick={toggleMenu}>
+              <a href={isSignupPage ? '/#resumeCard' : '#resumeCard'} className="Link">
+                Templates
+              </a>
+          </li>
+          <li onClick={toggleMenu}>
+              <a href={isSignupPage ? '/#howToMake' : '#howToMake'} className="Link">
+                How it Works
+              </a>
+          </li>
+          <li onClick={toggleMenu}>
+              <a href={isSignupPage ? '/#whyus' : '#whyus'} className="Link">
+                Why Us
+              </a> 
+          </li>
+          <li onClick={toggleMenu}>
+              <a href={isSignupPage ? '/#contactUs' : '#contactUs'} className="Link">
+               Contact
+              </a>
+          </li>
+          <li onClick={toggleMenu}>
+              <a href={isSignupPage ? '/#faq' : '#faq'} className="Link">
+               FAQ
+              </a> 
+          </li>
+          <li onClick={toggleMenu}>
+              <a href="/signin" className="Link">
+               Login
+              </a> 
+          </li>
+          {/* Add more mobile menu items as needed */}
+        </ul>
+        <div className="login-links">
+        <a href="/signup" alt="link"><ButtonCompo text="Sign Up" type="bg-blue-border" icon={false}  /></a>
+        </div> 
+      </div>
         </>
       )}
     </NavbarStyle>

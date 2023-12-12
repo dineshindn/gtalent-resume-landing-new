@@ -22,7 +22,7 @@ export const FAQStyle = styled.div`
   }
  .heading{
   h1 {
-    text-align: left;
+    text-align: center;
     margin: 0px 0 1px;
     // padding-top: 40px;
     color: #3EB882;
@@ -32,15 +32,13 @@ export const FAQStyle = styled.div`
 
   h2 {
     font-family: Young Serif;
-font-size: 52px;
-font-weight: 400;
-line-height: 54px;
-    text-align: left;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 54px;
+    text-align: center;
     color: #242a36;
     margin-top: 0px;
     margin-bottom: 0px;
-    display: inline-block;
-    width: 43%;
   }
   p{
     font-size: 20px;
@@ -83,6 +81,7 @@ line-height: 54px;
   
 }
 @media screen and (max-width: 768px) {
+  margin-top: 40px !important;
   h1 {
     font-size: 20px;
   }

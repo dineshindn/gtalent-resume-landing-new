@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const NavbarStyle = styled.div`
   .navbar {
+    padding-top: 25px !important;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,6 +19,10 @@ export const NavbarStyle = styled.div`
     .banner-btn:hover .btn_text{
       color: blue;
 
+    }
+    a {
+      text-decoration: none;
+      color: inherit; 
     }
     .logo {
       flex: 1;
@@ -35,6 +40,7 @@ export const NavbarStyle = styled.div`
     .nav-items {
       display: flex;
       align-items: center;
+      z-index: 2; 
 
       ul {
         display: flex;
@@ -138,7 +144,15 @@ export const NavbarStyle = styled.div`
   }
 
   @media screen and (max-width: 760px) {
-    
+    #login-btn{
+      background-color: #F2F2F2;
+    }
+    #mobile-menu .login-links a{
+
+    }
+    .logo img {
+      width: 110px;
+    }
     .navbar {
       padding: 13px 25px 13px 16px;
     }
@@ -185,7 +199,7 @@ export const NavbarStyle = styled.div`
     display: block;
     background-color: #ffffff;
     box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-    padding: 30px 0 0 10px;
+    padding: 30px 0 0 20px;
     position: fixed;
     top: 70px;
     left: 0px;
@@ -201,7 +215,7 @@ export const NavbarStyle = styled.div`
   }
 
   #mobile-menu li {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
   .faq-answer {
     display: none;

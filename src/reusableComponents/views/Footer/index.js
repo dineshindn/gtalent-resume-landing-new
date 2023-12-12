@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { FooterStyle } from "./styles";
 import { Col, Row } from "antd";
-import footerLogo from "../../../assets/reusableComponents/footer/footer-logo.png";
+import { useLocation } from 'react-router-dom'; // Assuming you are using react-router-dom
+
+import footerLogo from "../../../assets/reusableComponents/footer/footer-logo.svg";
 import instagram from "../../../assets/reusableComponents/footer/footer-instagram.png";
 import facebook from "../../../assets/reusableComponents/footer/footer-facebook.png";
 import linkedin from "../../../assets/reusableComponents/footer/footer-linkedin.png";
@@ -18,6 +20,10 @@ import time from "../../../assets/reusableComponents/footer/time.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 function Footer() {
+
+  const location = useLocation();
+  const isSignupPage = location.pathname === '/signup';
+
   useEffect(() => {
     AOS.init({
       once: true,
@@ -31,7 +37,7 @@ function Footer() {
         <Row>
           <Col
             className="gutter-row"
-            span={24} md={6}
+            span={24} md={5}
             data-aos="fade-down"
             data-aos-duration="1500"
           >
@@ -50,16 +56,26 @@ function Footer() {
           >
             <div data-aos="fade-down" data-aos-duration="1500">
             <h3>Quick Links</h3>
-              <ul>
-                <li>Templates</li>
-                <li>How it Works</li>
-                <li>Why Us</li>
-                <li>Contact</li>
-                <li>FAQ</li>
+              <ul className="aLink">
+                <li><a href={isSignupPage ? '/#resumeCard' : '#resumeCard'} className="Link">
+                Templates
+              </a></li>
+                <li><a href={isSignupPage ? '/#howToMake' : '#howToMake'} className="Link">
+                How it Works
+              </a></li>
+                <li>  <a href={isSignupPage ? '/#whyus' : '#whyus'} className="Link">
+                Why Us
+              </a>  </li>
+                <li> <a href={isSignupPage ? '/#contactUs' : '#contactUs'} className="Link">
+               Contact
+              </a>  </li>
+                <li><a href={isSignupPage ? '/#faq' : '#faq'} className="Link">
+               FAQ
+              </a>   </li>
               </ul>
             </div>
           </Col>
-          <Col className="gutter-row contact-row" span={24} md={6}>
+          <Col className="gutter-row contact-row" span={24} md={7}>
             <div data-aos="fade-down" data-aos-duration="2000">
             <h3>Contact Us</h3>
               <ul>

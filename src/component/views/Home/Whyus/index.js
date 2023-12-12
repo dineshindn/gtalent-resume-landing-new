@@ -63,8 +63,8 @@ const WhyUs = () => {
     {
       id:6,
       img:Frame6,
-      title:'Content Guidance',
-      text:'Not sure what to include in your resume? Our builder offers expert tips and suggestions for each section, ensuring you to highlight your strengths effectively.',
+      title:'Encryption & Tracking',
+      text:'Encrypted, Secure Share, Restrict access, track views and analysis.',
       class:'fade-left'
     } 
   ];

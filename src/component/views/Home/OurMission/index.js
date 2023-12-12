@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { OurMissionStyle } from "./styles";
+import { useNavigate  } from 'react-router-dom';
 import { Card, Col, Row } from "antd";
 import img2 from "../../../../../src/assets/home/ourMission/ourMission.svg";
 import { Button, Radio, Space, Divider } from "antd";
@@ -19,7 +20,11 @@ const OurMission = () => {
     });
     AOS.refresh();
   }, []);
+  const navigate = useNavigate ();
 
+  const handleButtonClick = () => {
+    navigate('/signin');
+  };
   return (
     <OurMissionStyle>
       <div id="ourMission" className="ourMission">
@@ -34,7 +39,7 @@ const OurMission = () => {
           </h1>
           <h2 data-aos="fade-down" data-aos-duration="1300">Our Mission</h2>
           <p data-aos="fade-left" data-aos-duration="1000">At G Talent Pro Resume Builder, Our mission is to empower job seekers like you to stand out in a competitive job market. We believe that everyone deserves a chance to pursue their dream career, and a well-crafted resume is the first step towards making that dream a reality</p>
-          <Button className="left" type="primary"  shape="round" size="large" data-aos="fade-left" data-aos-duration="1000">
+          <Button className="left" type="primary"  shape="round" size="large" data-aos="fade-left" data-aos-duration="1000" onClick={handleButtonClick}>
             Create resume now
           </Button>
         </div>

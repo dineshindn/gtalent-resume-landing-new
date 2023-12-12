@@ -8,6 +8,24 @@ export const ResumeCardStyle = styled.div`
     text-align: center;
     position: relative;
     margin-bottom: 30px;
+    .ant-row{
+      padding: 0 75px;
+      display: flex !important;
+    }
+    .ant-col-8{
+      padding: 0 10px;
+    }
+    #carousal-res{
+      display: none;
+    }
+    #carousal-web{
+      display: block;
+    }
+    .ant-carousal{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+    }
     h1 {
       text-align: center;
       margin: 0px 0 1px;
@@ -44,6 +62,7 @@ export const ResumeCardStyle = styled.div`
       color: #4c525e;
     }
     .buttons {
+      margin-top: 30px;
       .left {
         background: #101623;
         font-family: "Kanit", sans-serif;
@@ -58,19 +77,35 @@ export const ResumeCardStyle = styled.div`
     }
 
     @media screen and (max-width: 768px) {
+      .ant-carousal{
+        width: 70%;
+      }
+      #carousal-res{
+        display: block !important;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #carousal-web{
+        display: none !important;
+      }
       h1 {
         font-size: 20px;
       }
 
       h2 {
-        font-size: 24px !important;
+        font-size: 21px !important;
         line-height: 1.2;
-        width: 75%;
+        width: 90%;
       }
 
       .banner-text {
-        font-size: 16px;
-        width: 75%;
+        font-size: 13px;
+        width: 90%;
+      }
+      .ant-btn.ant-btn-lg {
+        font-size: 13px;
+        height: 36px;
       }
     }
   }

@@ -18,6 +18,9 @@ export const ReviewStyle = styled.div`
   img{
     width: 100%;
   }
+  .ant-col{
+    padding-left: 45px;
+  }
  .heading{
   h1 {
     text-align: left;
@@ -69,23 +72,51 @@ line-height: 27px;
 
 /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
+  .review {
+    padding: 20px 20px 465px;
+
+  .ant-col{
+    padding-left: 0px;
+  }
+  .heading{
+    padding: 0 26px;
+  }
+ 
+
   .heading h1 {
     font-size: 24px; /* Adjust font size for mobile */
     padding-top: 20px;
+    text-align: center;
   }
 
   .heading h2 {
-    font-size: 32px; /* Adjust font size for mobile */
-    line-height: 38px; /* Adjust line height for mobile */
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    width: 100%;
   }
 
   .heading p {
-    font-size: 18px; /* Adjust font size for mobile */
-    line-height: 24px; /* Adjust line height for mobile */
+    font-size: 15px;
+    line-height: 22px; 
+    text-align: center;
+    width: 100%;
   }
 
   .heading button {
     margin-top: 20px; /* Adjust margin for mobile */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
   }
+}
+.review-img {
+  position: absolute;
+  top: auto;
+  right: 0px;
+  bottom: 20px;
+  width: 100%;
+}
 }
 `;

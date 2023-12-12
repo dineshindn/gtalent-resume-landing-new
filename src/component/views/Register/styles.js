@@ -4,12 +4,22 @@ import bdImg from "../../../../src/assets/register/bg-img1.svg";
 
 export const RegisterStyle = styled.div`
   .register-container {
-    background-image: url(${bdImg});
-    background-size: 100%;
-    background-repeat: no-repeat;
-    position: relative;
-
+    // background-image: url(${bdImg});
+    // background-size: 100%;
+    // background-repeat: no-repeat;
+    // position: relative;
     margin-bottom: 30px;
+    .mob-date-code{
+      display: none;
+   }
+    .web-phone-code{
+      display: flex; 
+      width: 100%;
+      flex-direction: row;
+      align-items: center; 
+      justify-content: space-between;
+    }
+    
     h1 {
       text-align: center;
       margin: 0px 0 1px;
@@ -41,12 +51,34 @@ export const RegisterStyle = styled.div`
         margin: 0 auto;
         border-radius: 20px;
     }
+    .mob-phone-code{
+      display: none;
+    }
+  }
+    .bannerBg{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 27%;
+    }
 
     @media screen and (max-width:768px){
+      .register-container {
+          .mob-date-code{
+            display: block;
+
+         }
+          .mob-phone-code{
+            display: flex;
+            width: 100%;
+         }
+         .web-phone-code{
+          display: none; 
+         }
         h2{
             font-size: 24px !important;
             line-height: 1.5 !important;
-            width: 65%;
+            width: 90%;
         }
         h1{
             font-size: 20px !important;
@@ -55,6 +87,10 @@ export const RegisterStyle = styled.div`
         .formCard{
             width: 90%;
         }
+      }
+      
+    .bannerBg {
+        width: 47%;
     }
   }
 `;

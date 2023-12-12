@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { LoginStyle } from "./styles";
-
 import {
   Form,
   Input,
@@ -16,8 +15,8 @@ import {
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import img1 from "../../../assets/login/img1.svg";
-import logo from "../../../assets/reusableComponents/navbar/gtalentpro-logo.png";
+import img1 from "../../../assets/login/signin.png";
+import logo from "../../../assets/reusableComponents/navbar/logo.svg"
 const LoginForm = () => {
   const onFinish = (values) => {
     // Handle form submission here
