@@ -6,8 +6,8 @@ import videoCover2 from "../../../../assets/reusableComponents/footer/video-cove
 import ButtonCompo from "../../../../reusableComponents/views/Button";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { StackedCarousel } from "react-stacked-carousel";
-import "react-stacked-carousel/dist/index.css";
+// import { StackedCarousel } from "react-stacked-carousel";
+// import "react-stacked-carousel/dist/index.css";
 
 const AboutUs = () => {
 
@@ -41,12 +41,8 @@ const AboutUs = () => {
             </div>
             <div className='aboutus-bg-container-main'>
               <div className='aboutus-bg-container'>
-                {/* <Carousel afterChange={onChange} {...props}>
-              <img src={aboutus1} alt="img" className='zoom_img' />
-              <img src={aboutus1} alt="img" className='zoom_img' />
-              <img src={aboutus1} alt="img" className='zoom_img' />
-              </Carousel> */}
-                <StackedCarousel
+               
+                {/* <StackedCarousel
                   autoRotate={true}
                   onCardChange={onCardChange}
                   containerClassName={"container"}
@@ -64,7 +60,7 @@ const AboutUs = () => {
                   <div key={"child3"}>
                     <img src={videoCover2} className="image" alt="img" />
                   </div>
-                </StackedCarousel>
+                </StackedCarousel> */}
               </div>
             </div>
           </div>

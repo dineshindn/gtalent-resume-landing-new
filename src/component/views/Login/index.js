@@ -50,7 +50,7 @@ const LoginForm = () => {
 
   return (
     <LoginStyle>
-      <div id="register-container" className="register-container">
+      <div id="signin-container" className="signin-container">
         <Card className="formCard">
           <Row span={16}>
             <Col  xs={24} sm={24} md={12} style={{padding: '30px'}}>

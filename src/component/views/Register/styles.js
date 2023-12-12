@@ -50,6 +50,7 @@ export const RegisterStyle = styled.div`
         width: 70%;
         margin: 0 auto;
         border-radius: 20px;
+        z-index: 2;
     }
     .mob-phone-code{
       display: none;
